@@ -20,6 +20,17 @@ module.exports = {
           "sass-loader", // 1, Turns sass into css
         ],
       },
+      {
+        test: /\.html$/,
+        use: ["html-loader"], // 讓 webpack 可以解析 html 內容
+      },
+      {
+        test: /\.(svg|png|jpg|gif)$/,
+        type: "asset/resource",
+        generator: {
+          filename: "imgs/[name].[hash][ext]",
+        },
+      },
     ],
   },
 };
