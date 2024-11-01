@@ -3,7 +3,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { Template } = require("webpack");
 
 module.exports = {
-  entry: "./src/index.js", // 告訴 webpack 要從哪開始打包
+  entry: {
+    main: "./src/index.js",
+    vendor: "./src/vendor.js",
+  }, // 告訴 webpack 要從哪開始打包
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/template.html", // webpack 幫我們生成 html
